@@ -1,13 +1,18 @@
 import React from 'react';
 
 
-const Friend = props => {
-    const { name, age, email } = props.data;
+
+
+function Friend ({ delFriend, data, upFriend}) {
+    
+     
     return (
-        <>
-            <p><strong>Name:</strong>{name}</p>
-            <p><strong>Age:</strong>{age}</p>
-            <p><strong>Email:</strong>{email}</p>  
+        <>  
+            <button onClick={delFriend.bind(this, data.id)}>Delete</button>
+            <button onClick={upFriend.bind(this, data.id)}>Edit Friend</button>
+            <p><strong>Name: </strong>{data.name}</p>
+            <p><strong>Age: </strong>{data.age}</p>
+            <p><strong>Email: </strong>{data.email}</p>  
         </>
     )
 }

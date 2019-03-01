@@ -11,8 +11,9 @@ export default class FriendsList extends Component {
         const { data } = this.props;
     return (
       <>
-         {data.map( friendMap => <Friend data={friendMap} key={uuidv4()}/>)}
+         {data.map( friendMap => <Friend data={friendMap} key={uuidv4()} delFriend={this.props.delFriend} upFriend={this.props.upFriend}/>)}
       </>
     )
   }
 }
+ 
